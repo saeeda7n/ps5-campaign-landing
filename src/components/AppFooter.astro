@@ -1,0 +1,61 @@
+---
+const usefulLinks = [
+  "ضمانت بازگشت کالا و گارانتی",
+  "قوانین و مقررات",
+  "درباره ما",
+  "تماس با ما",
+  "ثبت نام همکار",
+  "نمایندگی ها",
+];
+---
+
+<footer
+  class="relative flex overflow-hidden bg-[#030303] pb-10 pt-16 leading-8 text-white/80"
+>
+  <i
+    class="fa-solid fa-gamepad-modern absolute -right-12 bottom-0 -rotate-45 text-9xl opacity-10"
+  ></i>
+  <i
+    class="fa-brands fa-playstation absolute bottom-0 left-0 rotate-[45deg] text-[16rem] opacity-10"
+  ></i>
+  <div class="container relative mx-auto flex flex-col gap-20">
+    <div class="grid grid-cols-3 gap-10">
+      <div class="flex flex-col gap-3">
+        <h4 class="text-xl font-semibold">لینک های مفید</h4>
+        <ul>
+          {
+            usefulLinks.map((item) => (
+              <li class="text-white/50 transition-all duration-300 hover:text-white/100">
+                <a href="#">{item}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="flex flex-col gap-3">
+        <h4 class="text-xl font-semibold">اطلاعات تماس</h4>
+        <ul>
+          {
+            usefulLinks.map((item) => (
+              <li class="text-white/50 transition-all duration-300 hover:text-white/100">
+                <a href="#">{item}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="flex flex-col gap-3">
+        <h4 class="text-xl font-semibold">لینک های مفید</h4>
+        <ul>
+          {
+            usefulLinks.map((item) => (
+              <li class="text-white/50 transition-all duration-300 hover:text-white/100">
+                <a href="#">{item}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
