@@ -1,0 +1,111 @@
+---
+const id = "CT-" + Math.random().toString(16).replace("0.", "");
+---
+
+<form
+  class="flex min-h-[45.4rem] w-[45.125rem] flex-col gap-6 rounded-[3.65rem] bg-gray-100 px-20 py-14"
+>
+  <div class="flex flex-col gap-2">
+    <span class="font-medium text-gray-600">کنسول بازی</span>
+    <div class="flex items-center gap-5">
+      <h3 class="text-[3.75rem] font-medium text-primary">PlayStation 5</h3>
+      <span
+        class="rounded-full bg-black px-4 pt-1 text-lg font-medium text-white"
+      >
+        Standard
+      </span>
+    </div>
+  </div>
+
+  <div class="flex gap-1.5 text-xl font-medium">
+    <i class="fa-solid fa-star text-amber-500"></i>
+    <span>8/10</span>
+    <span><i class="fa-solid fa-period -translate-y-1"></i></span>
+    <span>15 برسی</span>
+  </div>
+  <div>
+    <p class="line-clamp-6 text-[1.375rem] font-extralight text-gray-600">
+      حالت شب اکنون در همه دوربین ها برای تسلط بر صحنه های پیچیده با نور کم است.
+      با روشن بودن حالت شب پرتره، حتی ظاهر شما نیز به روش طبیعی خیره کننده ای
+      روشن می شود حالت شب اکنون در همه دوربین ها برای تسلط بر صحنه های پیچیده با
+      نور کم است. با روشن بودن حالت شب پرتره، حتی ظاهر شما نیز به روش طبیعی خیره
+      کننده ای روشن می شود حالت شب اکنون در همه دوربین ها برای تسلط بر صحنه های
+      پیچیده با نور کم است. با روشن بودن حالت شب پرتره، حتی ظاهر شما نیز به روش
+      طبیعی خیره کننده ای روشن می شود
+    </p>
+  </div>
+  <div class="flex items-center justify-between">
+    <ul class="flex gap-2">
+      <li
+        class="aspect-square h-10 rounded-full border-4 border-gray-500 bg-white"
+      >
+        <input type="text" hidden name={`Color-${id}`} value="white" />
+      </li>
+    </ul>
+    <div class="mt-5 flex">
+      <label class="flex items-center gap-3">
+        <button
+          data-minus={id}
+          type="button"
+          class="flex h-12 w-12 items-center justify-center rounded-full border border-gray-600 text-2xl disabled:opacity-40"
+        >
+          <i class="fa-solid fa-minus"></i>
+        </button>
+        <input
+          type="text"
+          name={`${id}`}
+          max="10"
+          value="1"
+          class="pointer-events-none flex h-12 w-12 items-center justify-center bg-transparent pt-1 text-center text-4xl font-medium"
+          readonly
+        />
+        <button
+          data-plus={id}
+          type="button"
+          class="flex h-12 w-12 items-center justify-center rounded-full border border-gray-600 text-2xl disabled:opacity-40"
+        >
+          <i class="fa-solid fa-plus"></i>
+        </button>
+      </label>
+    </div>
+  </div>
+  <div class="mt-auto flex items-center justify-between">
+    <div class="flex items-end gap-2">
+      <span class="text-5xl font-black">21,890,000</span>
+      <span class="text-lg font-bold">تومان</span>
+    </div>
+    <div>
+      <button
+        type="submit"
+        class="flex h-20 items-center gap-4 rounded-full bg-primary px-8 text-lg font-medium text-white"
+      >
+        <i class="fa-regular fa-bag-shopping text-4xl"></i>
+        افزودن به سبد
+      </button>
+    </div>
+  </div>
+</form>
+<script>
+  const inputs = $('input[type="text"]');
+
+  for (const _input of inputs) {
+    const input = $(_input);
+    const name = input.attr("name");
+
+    const max = +input.attr("max");
+    const minus = $(`button[data-minus="${name}"]`);
+    const plus = $(`button[data-plus="${name}"]`);
+    minus.click(function () {
+      const val = input.val();
+      plus.attr("disabled", false);
+      input.val(+input.val() - 1);
+      if (+input.val() <= 0) $(this).attr("disabled", true);
+    });
+    plus.click(function () {
+      const val = input.val();
+      minus.attr("disabled", false);
+      input.val(+input.val() + 1);
+      if (+input.val() >= max) $(this).attr("disabled", true);
+    });
+  }
+</script>

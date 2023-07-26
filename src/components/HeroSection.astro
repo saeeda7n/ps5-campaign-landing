@@ -1,0 +1,83 @@
+---
+---
+
+<section
+  class="relative -mt-28 h-screen min-h-screen overflow-hidden bg-red-300"
+>
+  <div class="absolute inset-0 bg-red-500">
+    <img
+      alt="Hero background"
+      class="h-full w-full object-cover object-center"
+      src="/assets/images/hero-background.jpg"
+    />
+  </div>
+
+  <div
+    class="container relative mx-auto flex h-full flex-col justify-end gap-8 text-white"
+  >
+    <h2 class="flex flex-col gap-5 text-6xl font-bold">
+      <small class="text-4xl">بدون هیچ</small>
+      محدودیتی بازی کن!!!
+    </h2>
+    <p class="max-w-lg text-xl leading-9">
+      Ray Tracking سطوح جدیدی از واقع گرایی را با سایه ها و بازتاب های طبیعی در
+      پشتیبانی از بازی های PS5 به ارمغان می آورد.
+    </p>
+    <div class="flex pb-16">
+      <a
+        href="#"
+        class="flex h-14 items-center justify-center gap-3 self-start rounded-full bg-white px-8 font-medium text-gray-900"
+      >
+        <i class="fa-regular fa-bag-shopping text-3xl"></i>
+        مشاهده بیشتر
+      </a>
+    </div>
+
+    <div class="down-arrow relative flex h-16 items-center justify-center">
+      <a
+        class="relative flex h-6 w-10 items-center justify-center"
+        href="#buy-now"
+      >
+        <div></div>
+        <div></div>
+      </a>
+    </div>
+  </div>
+</section>
+<style>
+  :root {
+    --rotation: 0;
+    --rotation-idel: 0;
+  }
+  @keyframes dropScale {
+    0% {
+      transform: translateY(0rem) rotate(var(--rotation-idel));
+    }
+
+    10% {
+      transform: translateY(0rem) rotate(var(--rotation-idel));
+    }
+    85% {
+      transform: translateY(0.75rem) rotate(var(--rotation));
+    }
+    100% {
+      transform: translateY(0rem) rotate(var(--rotation-idel));
+    }
+  }
+  .down-arrow div:first-child {
+    --rotation: 20deg;
+    --rotation-idel: 45deg;
+    @apply absolute h-5 w-1.5 origin-bottom-left rotate-45 rounded-full bg-white;
+    animation: dropScale 1.3s infinite;
+  }
+  .down-arrow div:last-child {
+    --rotation: -20deg;
+    --rotation-idel: -45deg;
+    @apply absolute h-5 w-1.5 origin-bottom-right -rotate-45 rounded-full bg-white;
+    animation: dropScale 1.3s infinite;
+  }
+
+  .animated-arrow {
+    animation: dropScale 1s infinite;
+  }
+</style>

@@ -1,0 +1,41 @@
+---
+import ProductCard from "./ProductCard.astro";
+---
+
+<section
+  class="container mx-auto flex min-h-screen items-center justify-between gap-20 py-16"
+  id="buy-now"
+>
+  <div class="flex-1">
+    <ProductCard />
+  </div>
+  <div class="relative flex h-full max-h-[35rem] flex-1 justify-center">
+    <img
+      draggable="false"
+      src="/assets/images/ps5.png"
+      alt="Ps 5"
+      class="flying-ps5 z-10 w-full object-contain object-center"
+    />
+    <div
+      class="absolute -bottom-10 h-8 w-1/2 rounded-full bg-gray-600 blur-2xl"
+    >
+    </div>
+  </div>
+</section>
+<style is:global>
+  @keyframes fly {
+    0% {
+      transform: translateY(-0.5rem);
+    }
+    50% {
+      transform: translateY(0.5rem);
+    }
+    100% {
+      transform: translateY(-0.5rem);
+    }
+  }
+
+  .flying-ps5 {
+    animation: 5s fly infinite ease-in-out;
+  }
+</style>
