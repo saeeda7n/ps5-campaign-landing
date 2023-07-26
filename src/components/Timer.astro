@@ -1,13 +1,127 @@
 ---
 ---
 
-<section class="relative flex min-h-screen">
+<section class="relative flex min-h-screen overflow-hidden">
   <img
     alt="Playstation games"
     draggable="false"
     src="/assets/images/playstatoin.jpg"
     class="h-full w-full object-cover object-center"
   />
+  <div class="absolute inset-0 flex">
+    <div
+      class="container relative z-10 mx-auto flex flex-1 flex-col justify-center"
+    >
+      <div class="flex max-w-xl flex-col gap-10">
+        <div
+          class="ct-timer mb-16 flex flex-row-reverse items-center gap-4 text-6xl font-bold"
+          data-date="1402/5/5"
+          data-ct-timer
+        >
+          <div>
+            <div>
+              <div>0</div>
+              <div>0</div>
+            </div>
+            <span>روز</span>
+          </div>
+          <span>:</span>
+          <div>
+            <div>
+              <div>0</div>
+              <div>0</div>
+            </div>
+            <span>ساعت</span>
+          </div>
+          <span>:</span>
+          <div>
+            <div>
+              <div>0</div>
+              <div>0</div>
+            </div>
+            <span>دقیقه</span>
+          </div>
+        </div>
 
-  <div class="container relative z-10 flex"></div>
+        <h3 class="text-6xl font-bold text-primary">در قرعه کشی شرکت کن</h3>
+        <p
+          class="max-w-xl text-2xl font-semibold leading-[3.2rem] text-gray-500"
+        >
+          همین الان ثبت نام کن و پیج اینستاگرام سی تلاکم رو دنبال کن تو قرعه کشی
+          پلی استیشن 5 شرکت کنی
+        </p>
+        <a
+          href="#"
+          class="flex h-20 items-center gap-4 self-start rounded-full bg-primary px-16 text-lg font-medium text-white"
+        >
+          <i class="fa-brands fa-instagram text-4xl"></i>
+          دنبال کن
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
+<style is:global>
+  .ct-timer > div {
+    @apply flex flex-1 flex-shrink-0 flex-col items-center gap-2;
+  }
+
+  .ct-timer > span {
+    @apply mb-8;
+  }
+
+  .ct-timer > div > div {
+    @apply flex w-full flex-shrink-0 gap-3;
+  }
+
+  .ct-timer > div > span {
+    @apply text-lg text-gray-500;
+  }
+
+  .ct-timer > div > div > div {
+    @apply flex h-32 flex-1 flex-shrink-0 items-center justify-center rounded-full border border-gray-400 pt-3;
+  }
+</style>
+<script>
+  $(document).ready(() => {
+    moment.locale("fa", { useGregorianParser: true });
+    const element = $("[data-ct-timer]");
+    const theDate = element.attr("data-date");
+    if (!theDate) return;
+    const target = moment.from(theDate, "fa");
+    const minutes = Math.abs(moment().diff(target, "minutes"));
+    const days = Math.floor(minutes / 24 / 60);
+    const hours = Math.floor((minutes / 60) % 24);
+    const mins = Math.floor(minutes % 60);
+    const date = [];
+    date[0] = days < 10 ? "0" + days : String(days);
+    date[1] = hours < 10 ? "0" + hours : String(hours);
+    date[2] = mins < 10 ? "0" + mins : String(mins);
+    console.log(date);
+    setInterval(() => {
+      element.html(`<div>
+            <div>
+              <div>${date[0][1]}</div>
+              <div>${date[0][0]}</div>
+            </div>
+            <span>روز</span>
+          </div>
+          <span>:</span>
+          <div>
+            <div>
+              <div>${date[1][1]}</div>
+              <div>${date[1][0]}</div>
+            </div>
+            <span>ساعت</span>
+          </div>
+          <span>:</span>
+          <div>
+            <div>
+              <div>${date[2][1]}</div>
+              <div>${date[2][0]}</div>
+            </div>
+            <span>دقیقه</span>
+          </div>`);
+    }, 1000);
+  });
+</script>
