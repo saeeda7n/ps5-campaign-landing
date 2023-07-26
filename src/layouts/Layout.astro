@@ -18,7 +18,9 @@ const { title } = Astro.props;
     <link rel="stylesheet" href="/kalameh/fontiran.css" />
     <link rel="stylesheet" href="/font-awesome/css/all.min.css" />
   </head>
-  <body class="flex min-h-screen flex-col bg-white font-kalameh">
+  <body
+    class="flex min-h-screen flex-col overflow-x-hidden bg-white font-kalameh"
+  >
     <slot />
     <script is:inline src="https://code.jquery.com/jquery-3.7.0.min.js"
     ></script>
@@ -28,4 +30,3 @@ const { title } = Astro.props;
     ></script>
   </body>
 </html>
-<style></style>
