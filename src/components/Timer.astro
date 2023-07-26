@@ -89,16 +89,21 @@
     const theDate = element.attr("data-date");
     if (!theDate) return;
     const target = moment.from(theDate, "fa");
+    let lastMinute = 0;
 
     setInterval(() => {
       const minutes = Math.abs(moment().diff(target, "minutes"));
       const days = Math.floor(minutes / 24 / 60);
       const hours = Math.floor((minutes / 60) % 24);
-      const mins = Math.floor(minutes % 60);
+      const min = Math.floor(minutes % 60);
+      if (lastMinute === min) {
+        lastMinute = min;
+        return;
+      }
       const date = [];
       date[0] = days < 10 ? "0" + days : String(days);
       date[1] = hours < 10 ? "0" + hours : String(hours);
-      date[2] = mins < 10 ? "0" + mins : String(mins);
+      date[2] = min < 10 ? "0" + min : String(min);
       element.html(`<div>
             <div>
               <div>${date[0][1]}</div>
