@@ -1,0 +1,28 @@
+---
+const links = [
+  "ضمانت بازگشت کالا و گارانتی",
+  "قوانین و مقرات",
+  "درباره ما",
+  "تماس با ما",
+  "ثبت نام همکار",
+  "نمایندگی",
+];
+---
+
+<div class="ct-collapsible-accordion">
+  <div class="ct-collapsible-item">
+    <input type="checkbox" id="links" hidden />
+    <label class="ct-collapsible-item-label" for="links">لینک های مفید</label>
+    <div class="ct-collapsible-item-content text-neutral-900">
+      <ul class="flex flex-col gap-1">
+        {
+          links.map((item) => (
+            <li>
+              <a href="#">{item}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</div>

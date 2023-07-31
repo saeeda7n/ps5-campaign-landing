@@ -2,23 +2,27 @@
 import ProductCard from "./ProductCard.astro";
 ---
 
-<section
-  class="container mx-auto flex min-h-screen items-center justify-between gap-20 py-16"
-  id="buy-now"
->
-  <div class="flex-1">
-    <ProductCard />
-  </div>
-  <div class="relative flex h-full max-h-[35rem] flex-1 justify-center">
-    <img
-      draggable="false"
-      src="/assets/images/ps5.png"
-      alt="Ps 5"
-      class="flying-ps5 z-10 w-full object-contain object-center"
-    />
+<section class="relative overflow-hidden" id="buy-now">
+  <div
+    class="container mx-auto flex min-h-screen flex-col-reverse items-center justify-between gap-20 pt-16 lg:flex-row lg:py-16"
+  >
+    <div class="relative flex-1">
+      <div class="absolute -inset-x-96 h-full bg-gray-100 lg:hidden"></div>
+      <ProductCard />
+    </div>
     <div
-      class="absolute -bottom-10 h-8 w-1/2 rounded-full bg-gray-600 blur-2xl"
+      class="relative flex h-full max-h-[35rem] flex-1 justify-center px-8 lg:px-3"
     >
+      <img
+        draggable="false"
+        src="/assets/images/ps5.png"
+        alt="Ps 5"
+        class="flying-ps5 z-10 w-full object-contain object-center"
+      />
+      <div
+        class="absolute -bottom-10 h-8 w-1/2 rounded-full bg-gray-600 blur-2xl"
+      >
+      </div>
     </div>
   </div>
 </section>

@@ -2,29 +2,31 @@
 ---
 
 <section
-  class="relative -mt-28 h-screen min-h-screen overflow-hidden bg-red-300"
+  class="relative -mt-20 h-screen min-h-screen overflow-hidden bg-red-300 lg:-mt-28"
 >
   <div class="absolute inset-0 bg-blue-600">
     <img
       draggable="false"
       alt="Hero background"
-      class="h-full w-full object-cover object-center"
+      class="h-full w-full object-cover object-[20%_0%] lg:object-center"
       src="/assets/images/hero-background.jpg"
     />
   </div>
 
   <div
-    class="container relative mx-auto flex h-full flex-col justify-end gap-8 text-white"
+    class="container relative mx-auto flex h-full flex-col justify-end gap-3 px-2 text-white lg:gap-8"
   >
-    <h2 class="flex flex-col gap-5 text-6xl font-bold">
-      <small class="text-4xl">بدون هیچ</small>
+    <h2
+      class="flex flex-col text-[11vw] font-bold sm:text-5xl lg:gap-5 lg:text-6xl"
+    >
+      <small class="text-2xl lg:text-4xl">بدون هیچ</small>
       محدودیتی بازی کن!!!
     </h2>
-    <p class="max-w-lg text-xl leading-9">
+    <p class="max-w-lg text-[3.777vw] sm:text-lg lg:text-xl lg:leading-9">
       Ray Tracking سطوح جدیدی از واقع گرایی را با سایه ها و بازتاب های طبیعی در
       پشتیبانی از بازی های PS5 به ارمغان می آورد.
     </p>
-    <div class="flex pb-16">
+    <div class="flex pb-5 lg:pb-16">
       <a
         href="#"
         class="flex h-14 items-center justify-center gap-3 self-start rounded-full bg-white px-8 font-medium text-gray-900"
@@ -34,7 +36,9 @@
       </a>
     </div>
 
-    <div class="down-arrow relative flex h-16 items-center justify-center">
+    <div
+      class="down-arrow relative mb-5 flex h-16 items-center justify-center lg:mb-0"
+    >
       <a
         class="relative flex h-6 w-10 items-center justify-center"
         href="#buy-now"

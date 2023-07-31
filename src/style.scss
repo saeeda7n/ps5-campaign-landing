@@ -1,0 +1,52 @@
+.ct-collapsible-accordion {
+  @apply flex-1;
+}
+
+.ct-collapsible {
+  .ct-accordion {
+    @apply overflow-hidden ;
+  }
+
+  &-item {
+    &-label {
+      @apply border-b lg:border-b-0;
+      @apply flex relative text-xl border-b-gray-500 h-10 items-start lg:font-medium;
+
+      &::after {
+        content: "";
+        rotate: 0;
+        @apply absolute h-5 w-0.5 bg-gray-500 left-2 transition-all duration-200 lg:hidden;
+      }
+
+      &::before {
+        rotate: 90deg;
+        content: "";
+        @apply absolute h-5 w-0.5 bg-gray-500 left-2 transition-all duration-200 lg:hidden;
+      }
+    }
+
+    &-content {
+      @apply max-h-0 lg:max-h-96;
+      @apply overflow-hidden transition-all duration-300 text-neutral-900 font-light text-base md:text-lg xl:text-xl;
+    }
+  }
+}
+
+input:checked {
+  + .ct-collapsible-item-label {
+    &::after {
+      transform: rotate(45deg);
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+  }
+
+  ~ .ct-collapsible-item-content {
+    @apply max-h-96 py-5 lg:py-0;
+  }
+}
+
+
+
