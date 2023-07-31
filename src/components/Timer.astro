@@ -5,12 +5,12 @@
   class="relative flex min-h-screen items-center overflow-hidden bg-gradient-to-r from-[#dbdde9] to-[#f0f1f5]"
 >
   <div
-    class="container relative z-10 mx-auto flex flex-1 flex-col items-center justify-between lg:flex-row"
+    class="container relative z-10 mx-auto flex flex-1 flex-col-reverse items-center justify-between gap-5 py-10 sm:py-16 lg:flex-row lg:gap-10"
   >
-    <div class="flex max-w-xl flex-col gap-10">
+    <div class="flex max-w-xl flex-col gap-5 px-3 sm:gap-10">
       <!--Tarikh data-date be tarikh mored nazar taghir dade shavad-->
       <div
-        class="ct-timer mb-16 flex flex-row-reverse items-center gap-4 text-6xl font-bold"
+        class="ct-timer mb-2 flex max-w-xs flex-row-reverse items-center gap-1 text-2xl font-bold sm:mb-16 sm:gap-4 lg:text-6xl"
         data-date="1402/6/5"
         data-ct-timer
       >
@@ -39,20 +39,25 @@
         </div>
       </div>
 
-      <h3 class="text-6xl font-bold text-primary">در قرعه کشی شرکت کن</h3>
-      <p class="max-w-xl text-2xl font-semibold leading-[3.2rem] text-gray-500">
+      <h3 class="text-2xl font-bold text-primary sm:text-4xl lg:text-6xl">
+        در قرعه کشی شرکت کن
+      </h3>
+      <p
+        class="max-w-xl text-sm font-semibold leading-6 text-gray-500 sm:text-lg sm:leading-8 lg:text-2xl lg:leading-[3.2rem]"
+      >
         همین الان ثبت نام کن و پیج اینستاگرام سی تلاکم رو دنبال کن تو قرعه کشی
         پلی استیشن 5 شرکت کنی
       </p>
+
       <a
         href="#"
-        class="flex h-20 items-center gap-4 self-start rounded-full bg-primary px-16 text-lg font-medium text-white"
+        class="flex h-10 items-center gap-1.5 self-start rounded-full bg-primary px-4 text-sm font-medium text-white sm:gap-2 lg:h-20 lg:text-lg"
       >
-        <i class="fa-brands fa-instagram text-4xl"></i>
+        <i class="fa-brands fa-instagram text-base lg:text-4xl"></i>
         دنبال کن
       </a>
     </div>
-    <div class="max-w-2xl">
+    <div class="max-w-2xl px-3 sm:px-0">
       <img src="/assets/images/xo.png" alt="XO#A." />
     </div>
   </div>
@@ -67,15 +72,15 @@
   }
 
   .ct-timer > div > div {
-    @apply flex w-full flex-shrink-0 gap-3;
+    @apply flex w-full flex-shrink-0 gap-1.5 sm:gap-3;
   }
 
   .ct-timer > div > span {
-    @apply text-lg text-gray-500;
+    @apply text-sm text-gray-500 sm:text-lg;
   }
 
   .ct-timer > div > div > div {
-    @apply flex h-32 flex-1 flex-shrink-0 items-center justify-center rounded-full border border-gray-400 pt-3;
+    @apply flex h-16 flex-1 flex-shrink-0 items-center justify-center rounded-full border border-gray-400 pb-2 pt-3 lg:h-32 lg:pb-0;
   }
 </style>
 <script>

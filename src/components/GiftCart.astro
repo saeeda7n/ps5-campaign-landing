@@ -1,16 +1,20 @@
 ---
 ---
 
-<section class="flex overflow-hidden px-5 py-24 pb-10 lg:px-0 lg:py-52">
+<section
+  class="flex overflow-hidden px-3 py-16 pb-10 sm:py-24 lg:px-0 lg:py-52"
+>
   <div
-    class="container mx-auto flex flex-col-reverse gap-16 sm:gap-20 lg:flex-row lg:gap-10"
+    class="container mx-auto flex flex-col-reverse gap-8 sm:gap-16 lg:flex-row lg:gap-10"
   >
-    <div class="flex flex-1 flex-col gap-8 lg:gap-12">
-      <h3 class="text-3xl font-bold text-primary md:text-4xl lg:text-6xl">
+    <div class="flex flex-1 flex-col gap-4 sm:gap-8 lg:gap-12">
+      <h3
+        class="text-2xl font-bold text-primary sm:text-3xl md:text-4xl lg:text-6xl"
+      >
         کارت هدیه برای همه
       </h3>
       <p
-        class="text-base font-semibold leading-8 text-gray-500 lg:text-2xl lg:leading-[3.2rem]"
+        class="text-sm font-semibold leading-6 text-gray-500 sm:text-base sm:leading-8 lg:text-2xl lg:leading-[3.2rem]"
       >
         با این کارت هدیه می توانید تا سقف 1 میلیون تومان از سی تلکام تخفیف
         بگیرید شما با پرداخت 500 هزار تومان صاحب این کارت تخفیف خواهید شد و
@@ -18,13 +22,13 @@
       </p>
       <a
         href="#"
-        class="mt-0 flex h-16 items-center gap-4 self-start rounded-full bg-primary px-8 font-medium text-white lg:-mt-7 lg:h-20 lg:text-lg"
+        class="flex h-10 items-center gap-1.5 self-start rounded-full bg-primary px-4 text-sm font-medium text-white sm:gap-2 lg:h-20 lg:text-lg"
       >
-        <i class="fa-regular fa-bag-shopping text-4xl"></i>
+        <i class="fa-regular fa-bag-shopping text-base lg:text-4xl"></i>
         افزودن به سبد
       </a>
     </div>
-    <div class="flex flex-1 items-center justify-center">
+    <div class="flex flex-1 items-center justify-center px-5">
       <div class="group relative max-w-lg">
         <img
           src="/assets/images/gift-cart.png"
@@ -34,13 +38,13 @@
         />
         <img
           src="/assets/images/gift-cart.png"
-          class="absolute top-0 z-20 origin-bottom-left rotate-2 opacity-60 transition-all duration-300 ease-out group-hover:mt-2 group-hover:rotate-6"
+          class="card-one"
           alt="Gift Cart"
           draggable="false"
         />
         <img
           src="/assets/images/gift-cart.png"
-          class="absolute top-0 z-10 origin-top-left -rotate-2 opacity-40 transition-all duration-300 ease-out group-hover:-mt-2 group-hover:-rotate-6"
+          class="card-two"
           alt="Gift Cart"
           draggable="false"
         />
@@ -48,3 +52,22 @@
     </div>
   </div>
 </section>
+<style>
+  .card-one {
+    @apply absolute -top-4 z-20 scale-90 opacity-60;
+  }
+
+  .card-two {
+    @apply absolute -top-8 z-10 scale-[0.8] opacity-40;
+  }
+
+  @screen lg {
+    .card-one {
+      @apply absolute top-0 z-20 origin-bottom-left rotate-2 scale-100 opacity-60 transition-all duration-300 ease-out group-hover:mt-2 group-hover:rotate-6;
+    }
+
+    .card-two {
+      @apply absolute top-0 z-10 origin-top-left -rotate-2 scale-100 opacity-40 transition-all duration-300 ease-out group-hover:-mt-2 group-hover:-rotate-6;
+    }
+  }
+</style>

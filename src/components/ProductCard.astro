@@ -3,23 +3,28 @@ const id = "CT-" + Math.random().toString(16).replace("0.", "");
 ---
 
 <form
-  class="relative flex w-auto flex-col gap-6 bg-gray-100 py-14 lg:min-h-[38rem] lg:w-[35.125rem] lg:rounded-[2.5rem] lg:px-5 lg:py-8 xl:min-h-[45.4rem] xl:w-[45.125rem] xl:rounded-[3.65rem] xl:px-20 xl:py-14"
+  id="order-now"
+  class="relative flex w-auto flex-col gap-3 bg-gray-100 py-14 sm:gap-6 lg:min-h-[38rem] lg:w-[35.125rem] lg:rounded-[2.5rem] lg:px-5 lg:py-8 xl:min-h-[45.4rem] xl:w-[45.125rem] xl:rounded-[3.65rem] xl:px-20 xl:py-14"
 >
   <div class="flex flex-col gap-2 px-3">
-    <span class="text-base font-medium text-gray-600">کنسول بازی</span>
-    <div class="flex flex-wrap items-center gap-5 gap-y-2">
-      <h3 class="text-5xl font-medium text-primary xl:text-[3.75rem]">
+    <span class="text-xs font-medium text-gray-600 sm:text-base"
+      >کنسول بازی</span
+    >
+    <div class="flex flex-wrap items-center gap-2 gap-y-2 sm:gap-5">
+      <h3
+        class="text-[1.6rem] font-medium text-primary sm:text-5xl xl:text-[3.75rem]"
+      >
         PlayStation 5
       </h3>
       <span
-        class="rounded-full bg-black px-4 pt-1 text-sm font-medium text-white lg:text-lg"
+        class="rounded-full bg-black px-2 text-xs font-medium text-white sm:px-4 sm:py-1 sm:pt-1.5 sm:text-base lg:text-lg"
       >
         Standard
       </span>
     </div>
   </div>
 
-  <div class="flex gap-1.5 px-3 text-xl font-medium">
+  <div class="flex gap-1.5 px-3 text-sm font-medium sm:text-xl">
     <i class="fa-solid fa-star text-amber-500"></i>
     <span>8/10</span>
     <span><i class="fa-solid fa-period -translate-y-1"></i></span>
@@ -27,7 +32,7 @@ const id = "CT-" + Math.random().toString(16).replace("0.", "");
   </div>
   <div class="px-3">
     <p
-      class="line-clamp-6 text-lg font-extralight text-gray-600 lg:text-[1.375rem]"
+      class="line-clamp-6 text-base font-extralight text-gray-600 sm:text-lg lg:text-[1.375rem]"
     >
       حالت شب اکنون در همه دوربین ها برای تسلط بر صحنه های پیچیده با نور کم است.
       با روشن بودن حالت شب پرتره، حتی ظاهر شما نیز به روش طبیعی خیره کننده ای
@@ -36,7 +41,7 @@ const id = "CT-" + Math.random().toString(16).replace("0.", "");
   <div class="flex items-center justify-between px-3 lg:mt-5">
     <ul class="flex gap-2">
       <li
-        class="aspect-square h-8 rounded-full border-4 border-gray-500 bg-white lg:h-10"
+        class="aspect-square w-6 rounded-full border-2 border-gray-500 bg-white sm:w-8 sm:border-4 lg:w-10"
       >
         <input type="text" hidden name={`Color-${id}`} value="white" />
       </li>
@@ -46,7 +51,7 @@ const id = "CT-" + Math.random().toString(16).replace("0.", "");
         <button
           data-minus={id}
           type="button"
-          class="flex aspect-square h-10 items-center justify-center rounded-full border border-gray-600 text-xl disabled:opacity-40 lg:h-12 lg:text-2xl"
+          class="flex aspect-square h-7 items-center justify-center rounded-full border border-gray-600 text-sm disabled:opacity-40 sm:h-10 sm:text-xl lg:h-12 lg:text-2xl"
         >
           <i class="fa-solid fa-minus"></i>
         </button>
@@ -55,13 +60,13 @@ const id = "CT-" + Math.random().toString(16).replace("0.", "");
           name={`${id}`}
           max="10"
           value="1"
-          class="pointer-events-none flex h-12 w-12 items-center justify-center bg-transparent pt-1 text-center text-3xl font-medium lg:text-4xl"
+          class="pointer-events-none flex aspect-square w-8 items-center justify-center bg-transparent pt-1 text-center text-xl font-medium sm:w-12 sm:text-3xl lg:text-4xl"
           readonly
         />
         <button
           data-plus={id}
           type="button"
-          class="flex aspect-square h-10 items-center justify-center rounded-full border border-gray-600 text-xl disabled:opacity-40 lg:h-12 lg:text-2xl"
+          class="flex aspect-square h-7 items-center justify-center rounded-full border border-gray-600 text-sm disabled:opacity-40 sm:h-10 sm:text-xl lg:h-12 lg:text-2xl"
         >
           <i class="fa-solid fa-plus"></i>
         </button>
@@ -71,16 +76,17 @@ const id = "CT-" + Math.random().toString(16).replace("0.", "");
   <div
     class="flex flex-wrap items-center justify-between gap-3 px-3 sm:mt-10 lg:mt-auto"
   >
-    <div class="flex items-end gap-2">
-      <span class="text-4xl font-black lg:text-5xl">21,890,000</span>
-      <span class="text-lg font-bold">تومان</span>
+    <div class="flex items-end gap-1 sm:gap-2">
+      <span class="text-lg font-black sm:text-4xl lg:text-5xl">21,890,000</span>
+      <span class="text-xs font-bold sm:text-xl lg:text-lg">تومان</span>
     </div>
     <div class="flex flex-shrink-0">
       <button
         type="submit"
-        class="flex h-16 items-center gap-4 rounded-full bg-primary px-8 font-medium text-white lg:h-20 lg:text-lg"
+        class="flex h-10 items-center gap-1.5 rounded-full bg-primary px-4 text-sm font-medium text-white sm:h-16 sm:gap-3 sm:px-8 sm:text-lg lg:h-20 lg:text-lg"
       >
-        <i class="fa-regular fa-bag-shopping text-2xl lg:text-4xl"></i>
+        <i class="fa-regular fa-bag-shopping text-base sm:text-xl lg:text-4xl"
+        ></i>
         افزودن به سبد
       </button>
     </div>

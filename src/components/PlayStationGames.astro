@@ -2,13 +2,13 @@
 ---
 
 <section
-  class="flex min-h-[70vh] overflow-hidden bg-gradient-to-l from-[#0931B7] to-[#1235a1] py-24 selection:bg-white selection:text-[#0931B7]"
+  class="flex min-h-[70vh] overflow-hidden bg-gradient-to-l from-[#0931B7] to-[#1235a1] pb-10 pt-24 selection:bg-white selection:text-[#0931B7] sm:py-24"
 >
   <div
-    class="container mx-auto flex flex-col items-center justify-center gap-32 xl:flex-row"
+    class="container mx-auto flex flex-col items-center justify-center gap-12 sm:gap-32 xl:flex-row"
   >
     <div
-      class="games relative flex min-h-[36rem] w-[30rem] flex-shrink-0 select-none items-center justify-center md:w-[44rem]"
+      class="games relative flex min-h-[24rem] w-[30rem] flex-shrink-0 select-none items-center justify-center sm:min-h-[36rem] md:w-[44rem]"
     >
       <div
         class="absolute aspect-square w-2/5 scale-110 rounded-full bg-white opacity-90 blur-3xl"
@@ -17,59 +17,69 @@
       <img
         src="/assets/images/playstation-character.png"
         alt="playstation character"
-        class="absolute"
+        class="absolute w-72 md:w-96"
         draggable="false"
+        loading="lazy"
       />
       <img
-        class="absolute left-10 top-12 z-10 w-32 animate-[6s_fly_infinite]"
+        class="absolute left-0 top-0 z-10 w-32 animate-[6s_fly_infinite] md:left-10 md:top-12 md:w-32"
         src="/assets/images/games/1.png"
         alt="PS5 - Spider man"
         draggable="false"
+        loading="lazy"
       />
       <img
         draggable="false"
-        class="absolute right-8 top-44 z-10 w-28 animate-[4.5s_fly_1s_infinite]"
+        class="absolute right-10 top-0 z-10 w-32 animate-[4.5s_fly_1s_infinite] md:bottom-28 md:left-8 md:right-auto md:top-auto md:w-44"
         src="/assets/images/games/2.png"
+        loading="lazy"
         alt="PS5 - Horizion"
       />
       <img
-        class="absolute bottom-5 left-16 z-10 w-40 animate-[5s_fly_infinite]"
+        class="absolute bottom-5 hidden w-40 animate-[5s_fly_infinite] sm:right-0 sm:top-36 sm:z-10 sm:block md:left-16"
         src="/assets/images/games/3.png"
         alt="PS5 - Mortal Kombat"
         draggable="false"
+        loading="lazy"
       />
       <img
         draggable="false"
         class="absolute -bottom-5 right-12 z-10 w-44 animate-[4s_fly_1s_infinite]"
         src="/assets/images/games/4.png"
         alt="PS5 - God Of War"
+        loading="lazy"
       />
       <img
         draggable="false"
-        class="absolute -top-20 right-40 z-10 w-40 animate-[5.5s_fly_infinite]"
+        class="absolute -top-36 z-10 w-36 animate-[5.5s_fly_infinite] md:-top-20 md:right-40 md:w-40"
         src="/assets/images/games/5.png"
         alt="PS5 - Ghost"
       />
       <img
         draggable="false"
-        class="absolute -top-10 left-48 z-10 w-28 animate-[4s_fly_infinite]"
+        class="absolute -left-10 top-48 z-10 w-36 animate-[4s_fly_infinite] md:-top-10 md:left-48 md:w-28"
         src="/assets/images/games/6.png"
         alt="PS5 - GT"
       />
       <img
         draggable="false"
-        class="absolute -bottom-16 left-64 z-10 w-32 animate-[5s_fly_1s_infinite]"
+        class="absolute -bottom-16 left-10 z-10 w-32 animate-[5s_fly_1s_infinite] sm:left-12 md:-bottom-16 md:left-64 md:w-32"
         src="/assets/images/games/7.png"
         alt="PS5 - Ratchet Clank"
+        loading="lazy"
       />
     </div>
     <div
-      class="flex flex-col justify-center gap-1 text-white lg:gap-8 xl:mr-auto xl:w-1/2"
+      class="ml-auto flex flex-col gap-1 px-3 text-white lg:ml-0 lg:gap-8 xl:mr-auto xl:w-1/2"
     >
-      <span class="text-right text-lg font-medium lg:text-3xl">Ps4 | Ps5</span>
-      <h3 class="text-right text-4xl font-bold lg:text-6xl">هزاران بازی</h3>
+      <span class="text-right text-base font-medium sm:text-lg lg:text-3xl"
+        >Ps4 | Ps5</span
+      >
+      <h3 class="text-right text-2xl font-bold sm:text-4xl lg:text-6xl">
+        هزاران بازی
+      </h3>
       <p
-        class="mt-5 max-w-xl text-right text-sm font-semibold leading-8 lg:text-xl lg:leading-10"
+        class="mt-5 text-right text-sm font-semibold leading-6 sm:leading-8 lg:text-xl lg:leading-10"
       >
         بیش از 4000 بازی PS4™ روی کنسول PS5 خود بازی کنید به عناوین PS4 و PS VR
         مورد علاقه خود با سازگاری به عقب بازگردید
