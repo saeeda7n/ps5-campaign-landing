@@ -4,7 +4,7 @@ const id = "CT-" + Math.random().toString(16).replace("0.", "");
 
 <form
   id="order-now"
-  class="relative flex w-auto flex-col gap-3 bg-gray-100 py-14 sm:gap-6 lg:min-h-[38rem] lg:w-[35.125rem] lg:rounded-[2.5rem] lg:px-5 lg:py-8 xl:min-h-[45.4rem] xl:w-[45.125rem] xl:rounded-[3.65rem] xl:px-20 xl:py-14"
+  class="relative flex w-auto flex-col gap-4 bg-gray-100 py-8 sm:gap-6 lg:min-h-[38rem] lg:w-[35.125rem] lg:rounded-[2.5rem] lg:px-5 lg:py-8 xl:min-h-[45.4rem] xl:w-[45.125rem] xl:rounded-[3.65rem] xl:px-20 xl:py-14"
 >
   <div class="flex flex-col gap-2 px-3">
     <span class="text-xs font-medium text-gray-600 sm:text-base"
@@ -38,7 +38,7 @@ const id = "CT-" + Math.random().toString(16).replace("0.", "");
       با روشن بودن حالت شب پرتره، حتی ظاهر شما نیز به روش طبیعی خیره کننده ای
     </p>
   </div>
-  <div class="flex items-center justify-between px-3 lg:mt-5">
+  <div class="mb-4 flex items-center justify-between px-3 lg:mt-5">
     <ul class="flex gap-2">
       <li
         class="aspect-square w-6 rounded-full border-2 border-gray-500 bg-white sm:w-8 sm:border-4 lg:w-10"
@@ -77,17 +77,18 @@ const id = "CT-" + Math.random().toString(16).replace("0.", "");
     class="flex flex-wrap items-center justify-between gap-3 px-3 sm:mt-10 lg:mt-auto"
   >
     <div class="flex items-end gap-1 sm:gap-2">
-      <span class="text-lg font-black sm:text-4xl lg:text-5xl">21,890,000</span>
+      <span class="text-3xl font-black sm:text-4xl lg:text-5xl">21,890,000</span
+      >
       <span class="text-xs font-bold sm:text-xl lg:text-lg">تومان</span>
     </div>
     <div class="flex flex-shrink-0">
       <button
         type="submit"
-        class="flex h-10 items-center gap-1.5 rounded-full bg-primary px-4 text-sm font-medium text-white sm:h-16 sm:gap-3 sm:px-8 sm:text-lg lg:h-20 lg:text-lg"
+        class="flex h-10 scale-110 items-center gap-1.5 rounded-full bg-primary px-4 text-sm font-medium text-white xs:scale-100 sm:h-16 sm:gap-3 sm:px-8 sm:text-lg lg:h-20 lg:text-lg"
       >
         <i class="fa-regular fa-bag-shopping text-base sm:text-xl lg:text-4xl"
         ></i>
-        افزودن به سبد
+        <span class="hidden xs:inline">افزودن به سبد</span>
       </button>
     </div>
   </div>
