@@ -5,7 +5,7 @@
   data-hero-area
   class="relative -mt-20 flex min-h-screen overflow-hidden bg-red-300 pt-64 lg:-mt-28"
 >
-  <div class="absolute inset-0 bg-blue-600">
+  <div class="absolute inset-0 select-none bg-blue-600">
     <div class="absolute inset-0" data-hero-background>
       <picture>
         <source
@@ -67,7 +67,7 @@
         />
       </picture>
     </div>
-    <div data-hero-part class="absolute inset-0 z-30 blur-[3px]">
+    <div data-hero-part class="absolute inset-0 z-30 blur-[1px]">
       <picture>
         <source
           media="(min-width:650px)"
@@ -129,6 +129,7 @@
     --rotation-idel: 0;
   }
 
+  /*
   section[data-hero-area] div[data-hero-part],
   section[data-hero-area] div[data-hero-background] {
     @apply transition-all duration-1000;
@@ -138,6 +139,8 @@
   section[data-hero-area]:hover div[data-hero-background] {
     @apply duration-0;
   }
+   */
+
   @keyframes dropScale {
     0% {
       transform: translateY(0rem) rotate(var(--rotation-idel));
@@ -188,29 +191,31 @@
     });
   });
   heroArea.on("mouseleave", () => {
-    $(gameConsole).css({
-      transform: `translate(0px,0px)`,
-    });
-    $(ctLogo).css({
-      transform: `translate(0px,0px)`,
-    });
-    $(character).css({
-      transform: `translate(0px,0px)`,
-    });
-    $(particle).css({
-      transform: `translate(0px,0px)`,
-    });
-    background.css({
-      transform: `translate(0px,0px)`,
-    });
+    // $(gameConsole).css({
+    //   transform: `translate(0px,0px)`,
+    // });
+    // $(ctLogo).css({
+    //   transform: `translate(0px,0px)`,
+    // });
+    // $(character).css({
+    //   transform: `translate(0px,0px)`,
+    // });
+    // $(particle).css({
+    //   transform: `translate(0px,0px)`,
+    // });
+    // background.css({
+    //   transform: `translate(0px,0px)`,
+    // });
   });
-  heroArea.on("mousemove", (e) => {
+
+  $(document).on("mousemove", (e) => {
     const hafW = width / 2;
     const hafH = height / 2;
     const { clientX, clientY } = e;
     const horizontal = (clientX - hafW) / hafW;
     const vertical = (clientY - hafH) / hafH;
 
+    console.log(`translate(${horizontal * 20}px,${vertical * 20}px)`);
     $(gameConsole).css({
       transform: `translate(${horizontal * 20}px,${vertical * 20}px)`,
     });
@@ -219,14 +224,13 @@
     });
 
     $(character).css({
-      transform: `translate(${horizontal * 15}px,${vertical * 15}px)`,
+      transform: `translate(${horizontal * 5}px,${vertical * 5}px)`,
     });
     $(particle).css({
       transform: `translate(${horizontal * 20 * -1}px,${vertical * 20 * -1}px)`,
     });
-
     $(background).css({
-      transform: `translate(${horizontal * 5 * -1}px,${vertical * 5 * -1}px)`,
+      transform: `translate(${horizontal * 8 * -1}px,${vertical * 8 * -1}px)`,
     });
   });
 </script>
